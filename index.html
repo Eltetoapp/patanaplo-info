@@ -25,7 +25,7 @@
 <main>
 <section>
 <h2>Röviden</h2>
-<p>A Patanapló egy lovasnapló-alkalmazás. Alapból minden adat, amit beírsz, <strong>csak a saját telefonodon</strong> van. Ha bekapcsolod a <strong>Felhőmentést</strong> (bejelentkezéssel), az adataidról másolat készül a felhőben, hogy telefoncsere után is meglegyenek, és több eszközön is használhasd őket. Nincs reklám, nincs követés, és az adataidat nem adjuk el. Az alábbiakban részletesen leírjuk, mi történik az adataiddal. Ha egy lovat megosztasz másokkal (közös ló), annak adatait a meghívottak is látják (4. pont).</p>
+<p>A Patanapló egy lovasnapló-alkalmazás. Alapból minden adat, amit beírsz, <strong>csak a saját telefonodon</strong> van. Ha bekapcsolod a <strong>Felhőmentést</strong> (bejelentkezéssel), az adataidról másolat készül a felhőben, hogy telefoncsere után is meglegyenek, és több eszközön is használhasd őket. Nincs reklám, nincs követés, és az adataidat nem adjuk el. Az előfizetés kezeléséhez az alkalmazás egy név nélküli azonosítóval a RevenueCat szolgáltatást használja (9. pont). Az alábbiakban részletesen leírjuk, mi történik az adataiddal. Ha egy lovat megosztasz másokkal (közös ló), annak adatait a meghívottak is látják (4. pont).</p>
 </section>
 
 <section>
@@ -38,7 +38,7 @@
 <section>
 <h2>2. Az alkalmazásban rögzített adatok</h2>
 <p>Az alkalmazásba beírt adatokat kizárólag a telefonod tárolja: a ló adatai és fotója, teendők, edzések, egészségügyi bejegyzések, oltások, vizsgák, költségek és elszámolás, takarmány és készlet, a csapattagok, a lovászok és a kapcsolatok neve és telefonszáma, valamint az általad feltöltött dokumentumok (pl. lóútlevél, számla, szerződés fotója vagy PDF-je) és a fotónapló képei.</p>
-<p>Ha nem használod a Felhőmentést, ezek az adatok nem kerülnek a fejlesztőhöz vagy harmadik félhez, és az alkalmazás nem küld el adatot sehova. Ha bekapcsolod, a 3. pont szerint kezeljük őket.</p>
+<p>Ha nem használod a Felhőmentést, ezek az adatok nem kerülnek a fejlesztőhöz vagy harmadik félhez. Az alkalmazás ilyenkor csak az előfizetésed ellenőrzéséhez szükséges, név nélküli adatokat küldi el (9. pont). Ha bekapcsolod, a 3. pont szerint kezeljük őket.</p>
 <p>Ha más személyek adatait (pl. bérlőtárs, edző, lovász, állatorvos nevét és telefonszámát) rögzíted, kérjük, csak olyat írj be, amire jogosult vagy, és amiről az érintett tud.</p>
 </section>
 
@@ -75,7 +75,7 @@
 <section>
 <h2>5. Amit nem gyűjtünk</h2>
 <ul>
-<li>személyazonosító adatokat (kivéve, ha bekapcsolod a Felhőmentést, lásd 3. pont),</li>
+<li>személyazonosító adatokat (kivéve, ha bekapcsolod a Felhőmentést, lásd 3. pont, és az előfizetés név nélküli azonosítóját, lásd 9. pont),</li>
 <li>helyadatokat,</li>
 <li>használati statisztikát, összeomlási jelentést vagy reklámazonosítót.</li>
 </ul>
@@ -104,8 +104,16 @@
 
 <section>
 <h2>9. Vásárlások, előfizetés</h2>
-<p>Az előfizetés megvásárlását és a fizetést a Google Play (iPhone-on az Apple App Store) kezeli, a saját adatvédelmi feltételei szerint. A fejlesztő nem látja a neved, a bankkártya-adataidat vagy a címedet; az áruháztól csak a vásárlás tényét és összesített, név nélküli kimutatásokat kap. Az alkalmazás a telefonon csak azt ellenőrzi az áruházon keresztül, hogy van-e érvényes előfizetésed.</p>
-<p>Jogalap: a szerződés teljesítése (GDPR 6. cikk (1) bekezdés b) pont).</p>
+<p><strong>Fizetés:</strong> az előfizetés megvásárlását és a fizetést a Google Play (iPhone-on az Apple App Store) kezeli, a saját adatvédelmi feltételei szerint. A fejlesztő nem látja a neved, a bankkártya-adataidat vagy a címedet. Az áruházak a fejlesztőnek összesített kimutatásokat adnak (pl. eladások száma országonként).</p>
+<p><strong>Az előfizetés nyilvántartása (RevenueCat):</strong> hogy az alkalmazás tudja, milyen csomagod van, és hogy a vásárlás telefoncsere vagy újratelepítés után is visszaállítható legyen, a RevenueCat szolgáltatást használjuk. Ezt az alkalmazás minden indításkor megkérdezi, akkor is, ha nem vásároltál (ilyenkor csak azt tudja meg, hogy nincs előfizetésed).</p>
+<ul>
+<li>Kezelt adatok: egy azonosító (bejelentkezés nélkül egy véletlenszerű, név nélküli azonosító, bejelentkezve a belső felhasználói azonosítód, lásd 3. pont); a vásárolt csomag, a vásárlás, a próba, a megújulás, a lemondás és a lejárat időpontja; az ár és a pénznem; az áruház és a vásárlás áruházi azonosítója; az ország; a telefon típusa és rendszerének verziója, az alkalmazás verziója, valamint a kapcsolat technikai adatai (pl. IP-cím). Nevet, e-mail-címet és bankkártya-adatot nem kap.</li>
+<li>Cél: az előfizetés ellenőrzése és a fizetős funkciók biztosítása, a vásárlás visszaállítása, a próba egyszeri igénybevételének ellenőrzése, közös lónál annak megállapítása, hogy a ló gazdájának van-e érvényes előfizetése, valamint a visszatérítési és panaszügyek kezelése.</li>
+<li>Jogalap: a szerződés teljesítése (GDPR 6. cikk (1) bekezdés b) pont).</li>
+<li>Adatfeldolgozó: RevenueCat, Inc. (1032 E Brandon Blvd #3003, Brandon, FL 33511, USA). Az adatok az Egyesült Államokba kerülnek; a továbbítás az EU és az USA közötti adatvédelmi keretrendszer, illetve az Európai Bizottság általános szerződési feltételei alapján történik. [Jogi átnézés: a RevenueCat cím és a továbbítás jogalapjának ellenőrzése.]</li>
+<li>Megőrzés: amíg a fiókod vagy az előfizetésed létezik. A fiók törlésekor a RevenueCatnél tárolt adataidat is töröljük, legkésőbb 30 napon belül. Az áruházak a saját vásárlási nyilvántartásukat a saját szabályaik szerint őrzik.</li>
+</ul>
+<p><strong>Ajándékkód a tesztelőknek:</strong> a tesztidőszak résztvevőinek az ajándék előfizetés kódját arra az e-mail-címre küldjük, amelyet a tesztelői kérdőívben megadtak. Ezt a címet csak erre és a tesztelői levelezésre használjuk, a kód elküldése és a kapcsolódó kérdések lezárása után legkésőbb 1 évvel töröljük. Jogalap: a hozzájárulásod, amelyet a cím megadásával adtál (GDPR 6. cikk (1) bekezdés a) pont).</p>
 </section>
 
 <section>
@@ -127,7 +135,7 @@
 
 <section>
 <h2>12. Adatok törlése</h2>
-<p>A telefonon lévő adatokat törölheted az alkalmazásban (jobb felső fogaskerék → Adatok → Haladó → „Minden adat törlése, újrakezdés”), egy-egy lovat a saját adataival együtt, vagy az alkalmazás eltávolításával. A felhőben tárolt adatokat és a fiókot a Fiók törlése gombbal törölheted, vagy e-mailben kérheted (<a href="fiok-torles.html">részletek</a>). A velünk folytatott levelezés törlését a fenti címen kérheted.</p>
+<p>A telefonon lévő adatokat törölheted az alkalmazásban (jobb felső fogaskerék → Adatok → Haladó → „Minden adat törlése, újrakezdés”), egy-egy lovat a saját adataival együtt, vagy az alkalmazás eltávolításával. A felhőben tárolt adatokat és a fiókot a Fiók törlése gombbal törölheted, vagy e-mailben kérheted (<a href="fiok-torles.html">részletek</a>). A fiók törlése az előfizetést nem mondja le: azt az áruházban kell lemondani (Google Play, illetve iPhone-on a Beállítások → Apple-fiók → Előfizetések). A velünk folytatott levelezés törlését a fenti címen kérheted.</p>
 </section>
 
 <section>
@@ -140,13 +148,13 @@ Bírósághoz is fordulhatsz; a pert a lakóhelyed szerinti törvényszék előt
 
 <section>
 <h2>14. Gyermekek</h2>
-<p>Az alkalmazás nem gyermekeknek készült, és nem gyűjt tudatosan adatot 16 év alatti személyektől.</p>
+<p>Fiókot 16 éves kortól lehet létrehozni, 16 év alatt a szülő vagy gondviselő hozzájárulásával. Az előfizetést 18 év alatt a szülő vagy gondviselő vásárolja meg, vagy az ő jóváhagyásával történjen a vásárlás.</p>
 </section>
 
 <section>
 <h2>15. Változások</h2>
 <p>Ha az alkalmazás új funkciót kap, amely adatkezeléssel jár, ezt a tájékoztatót előre frissítjük, és az alkalmazásban is jelezzük. A korábbi változatokat kérésre elküldjük.</p>
-<p class="muted">Utolsó módosítás: 2026. október 10. (közös ló, lovardás nézet, üzenőfal, lovászbeosztás, havi összesítő, kamera, költségek exportja; az adatkezelő megnevezése, nyelvi pontosítások). Előző változat: 2026. október 6.</p>
+<p class="muted">Utolsó módosítás: 2026. november 1. (előfizetés: RevenueCat, ajándékkódok, gyermekek). Előző változat: 2026. október 10. [Tervezet – jogi átnézés alatt]</p>
 </section>
 </main>
 </body>
