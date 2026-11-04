@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patanapló – letöltés</title>
+<meta name="description" content="Patanapló – magyar lovas napló iPhone-ra és Androidra. Teendők, edzés, egészség, elszámolás a bérlővel.">
+<style>
+  :root{--bg:#f6f1e8;--fg:#1d2733;--muted:#5f6b78;--navy:#162d47;--gold:#d9a441;--card:#fff;--btn:#c8642f}
+  @media (prefers-color-scheme:dark){:root{--bg:#12171d;--fg:#e8edf2;--muted:#9aa7b4;--card:#1a2129}}
+  body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:var(--navy);color:#fff;padding:32px 16px 26px;border-bottom:4px solid var(--gold);text-align:center}
+  header b{color:var(--gold);font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+  h1{margin:6px 0 4px;font-size:30px;line-height:1.2}
+  header p{margin:0;color:#c9d3dd}
+  main{max-width:480px;margin:0 auto;padding:22px 16px 48px}
+  .card{background:var(--card);border-radius:16px;padding:18px;margin:0 0 16px}
+  a.btn{display:block;text-align:center;text-decoration:none;font-weight:700;color:#fff;background:var(--btn);border-radius:12px;padding:15px 12px;margin:10px 0;font-size:18px}
+  a.btn.sec{background:var(--navy)}
+  ul{margin:6px 0 0;padding-left:20px}
+  li{margin:4px 0}
+  .muted{color:var(--muted);font-size:14px;text-align:center}
+  .muted a{color:inherit}
+</style>
+</head>
+<body>
+<header><b>Patanapló</b><h1>A lovad minden ügye egy helyen</h1><p>Magyar lovas napló iPhone-ra és Androidra</p></header>
+<main>
+<div class="card">
+  <a class="btn" id="ios" href="https://apps.apple.com/hu/app/id6820250520">Letöltés iPhone-ra (App Store)</a>
+  <a class="btn sec" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app">Letöltés Androidra (Google Play)</a>
+</div>
+<div class="card">
+  <ul>
+    <li>Emlékeztető patkolásra, oltásra, féreghajtásra</li>
+    <li>Edzésnapló, egészségnapló, takarmánykészlet</li>
+    <li>Közös naptár és elszámolás a bérlővel</li>
+    <li>1 lóra ingyenes, reklám nélkül</li>
+  </ul>
+</div>
+<p class="muted"><a href="./">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a></p>
+</main>
+<script>
+/* Telefonon rögtön a megfelelő áruházba visz; számítógépen a két gomb marad. Nincs követés, nincs süti. */
+(function(){var u=navigator.userAgent||"",ios=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1),and=/Android/i.test(u);
+  var t=ios?document.getElementById("ios"):and?document.getElementById("and"):null;if(t)location.replace(t.href)})();
+</script>
+</body>
+</html>
