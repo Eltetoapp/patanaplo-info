@@ -3,47 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Patanapló – letöltés</title>
-<meta name="description" content="Patanapló – magyar lovas napló iPhone-ra és Androidra. Teendők, edzés, egészség, elszámolás a bérlővel.">
+<title>Patanapló – a lovad minden ügye egy helyen</title>
+<meta name="description" content="Magyar lovas napló iPhone-ra és Androidra: emlékeztető patkolásra, oltásra, féreghajtásra, edzésnapló, elszámolás a bérlővel, közös ló, versenyek. 1 lóra ingyenes, reklám nélkül.">
+<!-- előnézet, amikor a linket Messengeren, Viberen, Facebookon küldik -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Patanapló">
+<meta property="og:title" content="Patanapló – a lovad minden ügye egy helyen">
+<meta property="og:description" content="Teendők és emlékeztetők, edzésnapló, elszámolás a bérlővel. Magyarul, iPhone-ra és Androidra. 1 lóra ingyenes.">
+<meta property="og:url" content="https://eltetoapp.github.io/patanaplo-info/letoltes.html">
+<meta property="og:image" content="https://eltetoapp.github.io/patanaplo-info/img/elonezet.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/ikon.png">
+<link rel="apple-touch-icon" href="img/ikon.png">
 <style>
-  :root{--bg:#f6f1e8;--fg:#1d2733;--muted:#5f6b78;--navy:#162d47;--gold:#d9a441;--card:#fff;--btn:#c8642f}
-  @media (prefers-color-scheme:dark){:root{--bg:#12171d;--fg:#e8edf2;--muted:#9aa7b4;--card:#1a2129}}
+  :root{--bg:#f6f1e8;--fg:#1d2733;--muted:#5f6b78;--navy:#162d47;--navy2:#21405f;--gold:#d9a441;--card:#fff;--btn:#a8562a;--line:#e6dfd2}
+  @media (prefers-color-scheme:dark){:root{--bg:#12171d;--fg:#e8edf2;--muted:#9aa7b4;--card:#1a2129;--line:#2c3743}}
+  *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  header{background:var(--navy);color:#fff;padding:32px 16px 26px;border-bottom:4px solid var(--gold);text-align:center}
-  header b{color:var(--gold);font-size:14px;letter-spacing:.05em;text-transform:uppercase}
-  h1{margin:6px 0 4px;font-size:30px;line-height:1.2}
-  header p{margin:0;color:#c9d3dd}
-  main{max-width:480px;margin:0 auto;padding:22px 16px 48px}
-  .card{background:var(--card);border-radius:16px;padding:18px;margin:0 0 16px}
-  a.btn{display:block;text-align:center;text-decoration:none;font-weight:700;color:#fff;background:var(--btn);border-radius:12px;padding:15px 12px;margin:10px 0;font-size:18px}
+  header{background:linear-gradient(135deg,var(--navy2),#0f2133);color:#fff;padding:36px 16px 40px;border-top:6px solid var(--gold);text-align:center}
+  .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:24px}
+  .brand img{width:52px;height:52px;border-radius:13px}
+  h1{margin:18px auto 10px;font-size:clamp(30px,6vw,46px);line-height:1.1;max-width:720px;letter-spacing:-.01em}
+  header p{margin:0 auto;color:#c9d6e3;max-width:560px}
+  .free{display:inline-block;margin-top:16px;background:var(--gold);color:#1d2733;font-weight:800;padding:6px 16px;border-radius:99px;font-size:15px}
+  main{max-width:960px;margin:0 auto;padding:0 16px 48px}
+  .dl{background:var(--card);border-radius:20px;padding:20px;margin:-22px auto 26px;max-width:620px;box-shadow:0 10px 30px rgba(15,33,51,.12);display:grid;gap:10px}
+  a.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:800;color:#fff;background:var(--btn);border-radius:14px;padding:15px 12px;font-size:18px}
   a.btn.sec{background:var(--navy)}
-  ul{margin:6px 0 0;padding-left:20px}
-  li{margin:4px 0}
-  .muted{color:var(--muted);font-size:14px;text-align:center}
+  a.btn svg{flex:0 0 auto}
+  .qr{display:none;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
+  .qr img{width:112px;height:112px;border-radius:8px;background:#fff;padding:4px}
+  .qr span{color:var(--muted);font-size:15px}
+  @media (hover:hover) and (min-width:720px){.qr{display:flex}}
+  .shots{display:flex;gap:14px;margin:8px 0 30px;overflow-x:auto;padding:4px 0 10px;scroll-snap-type:x mandatory}
+  .shots img:first-child{margin-left:auto}.shots img:last-child{margin-right:auto}
+  .shots img{width:min(250px,62vw);height:auto;border-radius:18px;box-shadow:0 10px 26px rgba(15,33,51,.18);scroll-snap-align:center;flex:0 0 auto}
+  h2{text-align:center;font-size:26px;margin:10px 0 16px}
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .f{background:var(--card);border-radius:16px;padding:16px 18px;border:1px solid var(--line)}
+  .f b{display:block;font-size:17px;margin-bottom:2px}
+  .f span{color:var(--muted);font-size:15px}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:26px 0}
+  blockquote{margin:0;background:var(--card);border-radius:16px;padding:16px 18px;border-left:5px solid var(--gold);font-style:italic}
+  blockquote footer{font-style:normal;color:var(--muted);font-size:14px;margin-top:6px}
+  .end{text-align:center;margin:30px 0 8px}
+  .end a.btn{display:inline-flex;padding:14px 26px}
+  .muted{color:var(--muted);font-size:14px;text-align:center;margin-top:28px}
   .muted a{color:inherit}
 </style>
 </head>
 <body>
-<header><b>Patanapló</b><h1>A lovad minden ügye egy helyen</h1><p>Magyar lovas napló iPhone-ra és Androidra</p></header>
+<header>
+  <div class="brand"><img src="img/ikon.png" alt="">Patanapló</div>
+  <h1>A lovad minden ügye egy helyen</h1>
+  <p>Magyar lovas napló iPhone-ra és Androidra: szól a patkolás, az oltás és a féreghajtás előtt, és rendben tartja az edzéseket és a költségeket.</p>
+  <span class="free">1 lóra ingyenes, reklám nélkül</span>
+</header>
 <main>
-<div class="card">
-  <a class="btn" id="ios" href="https://apps.apple.com/hu/app/id6820250520">Letöltés iPhone-ra (App Store)</a>
-  <a class="btn sec" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app&amp;referrer=utm_source%3Dfacebook%26utm_medium%3Dhirdetes%26utm_campaign%3Dletoltes">Letöltés Androidra (Google Play)</a>
+<div class="dl" id="letoltes">
+  <a class="btn" id="ios" href="https://apps.apple.com/hu/app/id6820250520"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Letöltés iPhone-ra</a>
+  <a class="btn sec" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg>Letöltés Androidra</a>
+  <div class="qr"><img src="img/qr.png" alt="QR-kód a letöltéshez"><span>Számítógépen nézed? Olvasd be a telefonod kamerájával, és rögtön a megfelelő áruházba visz.</span></div>
 </div>
-<div class="card">
-  <ul>
-    <li>Emlékeztető patkolásra, oltásra, féreghajtásra</li>
-    <li>Edzésnapló, egészségnapló, takarmánykészlet</li>
-    <li>Közös naptár és elszámolás a bérlővel</li>
-    <li>1 lóra ingyenes, reklám nélkül</li>
-  </ul>
+
+<div class="shots" aria-label="Képek az appból">
+  <img src="img/1_ma.jpg" alt="A Ma képernyő: a hét teendői" loading="lazy">
+  <img src="img/2_koltseg.jpg" alt="Elszámolás a bérlővel" loading="lazy">
+  <img src="img/4_uzenet.jpg" alt="Közös ló üzenőfallal" loading="lazy">
 </div>
-<p class="muted"><a href="./">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a></p>
+
+<h2>Mit tud?</h2>
+<div class="feat">
+  <div class="f"><b>Időben szól</b><span>Patkolás, oltás, féreghajtás, fogászat: értesítést kapsz, mielőtt esedékes.</span></div>
+  <div class="f"><b>Edzésnapló</b><span>Stopperrel, tervezett edzésekkel, havi tervvel: ki jön és mit csinál.</span></div>
+  <div class="f"><b>Elszámolás a bérlővel</b><span>Ki mit fizetett, ki kinek tartozik, tételenként, emlékeztetővel.</span></div>
+  <div class="f"><b>Közös ló</b><span>A bérlőd, az edződ vagy a családod a saját telefonján is látja és vezeti, üzenőfallal.</span></div>
+  <div class="f"><b>Versenyek</b><span>Eredmények szakág szerint, és megosztható kép a helyezésről a saját fotóddal.</span></div>
+  <div class="f"><b>Lovardáknak</b><span>Istálló nézet az összes lóval, lovászbeosztás, havi összesítő a tulajdonosoknak.</span></div>
+</div>
+
+<div class="quotes">
+  <blockquote>„Végre egy olyan app, amivel megkönnyíthető egy lovas élete.”<footer>Evelin, tesztelő</footer></blockquote>
+  <blockquote>„Emlékeztető és összefoglaló a lovunk aktuális állapotáról.”<footer>Adri, tesztelő</footer></blockquote>
+</div>
+
+<div class="end"><a class="btn" href="#letoltes">Letöltöm</a></div>
+
+<p class="muted"><a href="./">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="https://facebook.com/patanaplo">Facebook</a> · <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a></p>
 </main>
 <script>
-/* Telefonon rögtön a megfelelő áruházba visz; számítógépen a két gomb marad. Nincs követés, nincs süti. */
-(function(){var u=navigator.userAgent||"",ios=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1),and=/Android/i.test(u);
-  var t=ios?document.getElementById("ios"):and?document.getElementById("and"):null;if(t)location.replace(t.href)})();
+/* Telefonon rögtön a megfelelő áruházba visz; számítógépen az oldal marad (QR-kóddal). Nincs követés, nincs süti.
+   Az Android-linkbe címke kerül, hogy a Play Console-ban lássuk, honnan jöttek: ?r=ajanlo (az appból ajánlva), ?r=qr; címke nélkül a hirdetés. */
+(function(){
+  var m=/[?&]r=([a-z0-9_-]{1,20})/i.exec(location.search),r=m?m[1].toLowerCase():"";
+  var ref=r?"utm_source%3D"+r+"%26utm_medium%3Dajanlas%26utm_campaign%3Dletoltes":"utm_source%3Dfacebook%26utm_medium%3Dhirdetes%26utm_campaign%3Dletoltes";
+  var and=document.getElementById("and");and.href=and.href.split("&")[0]+"&referrer="+ref;
+  var u=navigator.userAgent||"",isI=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1),isA=/Android/i.test(u);
+  var t=isI?document.getElementById("ios"):isA?and:null;if(t)location.replace(t.href)})();
 </script>
 </body>
 </html>
