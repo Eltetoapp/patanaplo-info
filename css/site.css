@@ -342,6 +342,9 @@ p{margin:0}
 }
 @media (max-width:519px){.ybtn{width:100%}}
 
+.sec.short{padding:clamp(64px,8vw,104px) 0}
+.more-links{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 32px;margin-top:28px;text-align:center}
+
 /* ---------- záró CTA ---------- */
 .cta{padding:clamp(80px,10vw,128px) 0;text-align:center}
 .cta h2{color:#fff;max-width:760px;margin:16px auto 16px}
