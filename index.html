@@ -51,7 +51,7 @@
   blockquote footer{font-style:normal;color:var(--muted);font-size:14px;margin-top:6px}
   .muted{color:var(--muted);font-size:14px;text-align:center;margin-top:28px}
   .muted a{color:inherit}
-  .pplink{font-size:13px;margin:14px 0 0;opacity:.8}.pplink a{color:inherit}
+  .pplink{font-size:15px;margin:14px 0 0}.pplink a{color:#fff;text-decoration:underline}
 </style>
 </head>
 <body>
@@ -93,14 +93,14 @@
 <p class="muted"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="https://facebook.com/patanaplo">Facebook</a> · <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a></p>
 </main>
 <script>
-/* Telefonon rögtön a megfelelő áruházba visz; számítógépen az oldal marad (QR-kóddal). Nincs követés, nincs süti.
+/* A főoldal NEM ugrik magától az áruházba (az app régi adatvédelmi linkje és az App Store adatvédelmi címe is ide mutat,
+   ezért az adatvédelmi link mindig elérhető maradjon). Az automatikus továbbítás csak a letoltes.html-en van. Nincs követés, nincs süti.
    Az Android-linkbe címke kerül, hogy a Play Console-ban lássuk, honnan jöttek: ?r=ajanlo (az appból ajánlva), ?r=qr; címke nélkül a hirdetés. */
 (function(){
   var m=/[?&]r=([a-z0-9_-]{1,20})/i.exec(location.search),r=m?m[1].toLowerCase():"";
   var ref=r?"utm_source%3D"+r+"%26utm_medium%3Dajanlas%26utm_campaign%3Dletoltes":"utm_source%3Dfacebook%26utm_medium%3Dhirdetes%26utm_campaign%3Dletoltes";
   var and=document.getElementById("and");and.href=and.href.split("&")[0]+"&referrer="+ref;
-  var u=navigator.userAgent||"",isI=/iPhone|iPad|iPod/i.test(u)||(/Macintosh/.test(u)&&navigator.maxTouchPoints>1),isA=/Android/i.test(u);
-  var t=isI?document.getElementById("ios"):isA?and:null;if(t)location.replace(t.href)})();
+})();
 </script>
 </body>
 </html>
