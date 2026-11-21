@@ -2,14 +2,15 @@
 <html lang="hu">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Patanapló – a lovad minden ügye egy helyen</title>
-<meta name="description" content="Magyar lovas napló iPhone-ra és Androidra: emlékeztető patkolásra, oltásra, féreghajtásra, edzésnapló, elszámolás a bérlővel, közös ló, versenyek. 1 lóra ingyenes, reklám nélkül.">
+<meta name="description" content="Magyar lovas napló iPhone-ra és Androidra: emlékeztető patkolásra, oltásra, féreghajtásra, edzésnapló, elszámolás a bérlővel tételenként, közös ló, lovardáknak istálló nézet. 1 lóra ingyenes, reklám nélkül.">
+<meta name="theme-color" content="#0d1c2c">
 <!-- előnézet, amikor a linket Messengeren, Viberen, Facebookon küldik -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Patanapló">
 <meta property="og:title" content="Patanapló – a lovad minden ügye egy helyen">
-<meta property="og:description" content="Teendők és emlékeztetők, edzésnapló, elszámolás a bérlővel. Magyarul, iPhone-ra és Androidra. 1 lóra ingyenes.">
+<meta property="og:description" content="Emlékeztetők, edzésnapló, elszámolás a bérlővel, közös ló. Magyarul, iPhone-ra és Androidra. 1 lóra ingyenes, reklám nélkül.">
 <meta property="og:url" content="https://patanaplo.hu/">
 <meta property="og:image" content="https://patanaplo.hu/img/elonezet.jpg">
 <meta property="og:image:width" content="1200">
@@ -18,94 +19,286 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="img/ikon.png">
 <link rel="apple-touch-icon" href="img/ikon.png">
-<style>
-  :root{--bg:#f6f1e8;--fg:#1d2733;--muted:#5f6b78;--navy:#162d47;--navy2:#21405f;--gold:#d9a441;--card:#fff;--btn:#a8562a;--line:#e6dfd2}
-  @media (prefers-color-scheme:dark){:root{--bg:#12171d;--fg:#e8edf2;--muted:#9aa7b4;--card:#1a2129;--line:#2c3743}}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  header{background:linear-gradient(135deg,var(--navy2),#0f2133);color:#fff;padding:36px 16px 40px;border-top:6px solid var(--gold);text-align:center}
-  .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:24px}
-  .brand img{width:52px;height:52px;border-radius:13px}
-  h1{margin:18px auto 10px;font-size:clamp(30px,6vw,46px);line-height:1.1;max-width:720px;letter-spacing:-.01em}
-  header p{margin:0 auto;color:#c9d6e3;max-width:560px}
-  .free{display:inline-block;margin-top:16px;background:var(--gold);color:#1d2733;font-weight:800;padding:6px 16px;border-radius:99px;font-size:15px}
-  main{max-width:960px;margin:0 auto;padding:0 16px 48px}
-  .dl{background:var(--card);border-radius:20px;padding:20px;margin:-22px auto 26px;max-width:620px;box-shadow:0 10px 30px rgba(15,33,51,.12);display:grid;gap:10px}
-  a.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:800;color:#fff;background:var(--btn);border-radius:14px;padding:15px 12px;font-size:18px}
-  a.btn.sec{background:var(--btn)}
-  a.btn svg{flex:0 0 auto}
-  .qr{display:none;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
-  .qr img{width:112px;height:112px;border-radius:8px;background:#fff;padding:4px}
-  .qr span{color:var(--muted);font-size:15px}
-  @media (hover:hover) and (min-width:720px){.qr{display:flex}}
-  .shots{display:flex;gap:14px;margin:8px 0 30px;overflow-x:auto;padding:4px 0 10px;scroll-snap-type:x mandatory}
-  .shots img:first-child{margin-left:auto}.shots img:last-child{margin-right:auto}
-  .shots img{width:min(250px,62vw);height:auto;border-radius:18px;box-shadow:0 10px 26px rgba(15,33,51,.18);scroll-snap-align:center;flex:0 0 auto}
-  h2{text-align:center;font-size:26px;margin:10px 0 16px}
-  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
-  .f{background:var(--card);border-radius:16px;padding:16px 18px;border:1px solid var(--line)}
-  .f b{display:block;font-size:17px;margin-bottom:2px}
-  .f span{color:var(--muted);font-size:15px}
-  a.fl{text-decoration:none;color:inherit;border:2px solid var(--gold)}a.fl em{display:block;font-style:normal;font-weight:800;color:var(--btn);margin-top:6px;font-size:15px}
-  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:26px 0}
-  blockquote{margin:0;background:var(--card);border-radius:16px;padding:16px 18px;border-left:5px solid var(--gold);font-style:italic}
-  blockquote footer{font-style:normal;color:var(--muted);font-size:14px;margin-top:6px}
-  .muted{color:var(--muted);font-size:14px;text-align:center;margin-top:28px}
-  .muted a{color:inherit}
-  .pplink{font-size:14px;margin:-12px 0 24px;text-align:center;color:var(--muted)}.pplink a{color:inherit}
-  .price{background:var(--card);border-radius:16px;padding:16px 18px;border:1px solid var(--line);text-align:center;margin:26px auto 0;max-width:720px}
-  .price span{color:var(--muted);font-size:15px}
-  .cta{background:linear-gradient(135deg,var(--navy2),#0f2133);color:#fff;border-radius:20px;padding:26px 20px;text-align:center;margin:28px auto 0;max-width:620px}
-  .cta h2{margin:0 0 14px;color:#fff}
-  .cta .two{display:grid;gap:10px}
-</style>
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/nunito-sans-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+<script>document.documentElement.className+=" js"</script>
 </head>
 <body>
-<header>
-  <div class="brand"><img src="img/ikon.png" alt="">Patanapló</div>
-  <h1>A lovad minden ügye egy helyen</h1>
-  <p>Magyar lovas napló iPhone-ra és Androidra: szól a patkolás, az oltás és a féreghajtás előtt, és rendben tartja az edzéseket és a költségeket.</p>
-  <span class="free">1 lóra ingyenes, reklám nélkül</span>
+<a class="skip" href="#tartalom">Ugrás a tartalomra</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./" aria-label="Patanapló – főoldal"><img src="img/ikon.png" alt="" width="34" height="34"><span class="lt">Patanapló</span></a>
+    <nav aria-label="Fő menü">
+      <a class="hide-s" href="#csomagok">Csomagok</a>
+      <a href="#lovardak">Lovardáknak</a>
+      <a class="pill" href="#letoltes">Letöltés</a>
+    </nav>
+  </div>
 </header>
-<main>
-<div class="dl" id="letoltes">
-  <a class="btn" id="ios" href="https://apps.apple.com/hu/app/id6820250520"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Letöltés iPhone-ra</a>
-  <a class="btn sec" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg>Letöltés Androidra</a>
-  <div class="qr"><img src="img/qr.png" alt="QR-kód a letöltéshez"><span>Számítógépen nézed? Olvasd be a telefonod kamerájával, és rögtön a megfelelő áruházba visz.</span></div>
+
+<main id="tartalom">
+<section class="night hero" aria-labelledby="h1">
+  <svg class="rosette" style="width:760px;right:-260px;top:-200px" viewBox="-100 -100 200 200" fill="none" stroke="currentColor" stroke-width=".6" aria-hidden="true"><circle r="98"/><circle r="62"/><circle r="56"/><circle r="40" stroke-dasharray="1.5 2.5"/><circle r="26"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(0.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(7.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(15.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(22.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(30.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(37.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(45.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(52.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(60.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(67.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(75.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(82.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(90.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(97.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(105.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(112.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(120.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(127.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(135.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(142.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(150.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(157.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(165.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(172.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(180.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(187.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(195.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(202.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(210.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(217.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(225.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(232.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(240.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(247.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(255.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(262.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(270.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(277.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(285.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(292.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(300.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(307.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(315.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(322.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(330.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(337.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(345.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(352.5)"/></svg>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">Lovas napló, magyarul</span>
+      <h1 id="h1">A lovad minden ügye, <em>egy helyen.</em></h1>
+      <p class="lead">Szól a patkolás, az oltás és a féreghajtás előtt, vezeti az edzéseket, és tételesen számon tartja, mivel tartozik a bérlő.</p>
+      <nav class="aud" aria-label="Kinek szól?">
+        <a href="#sajat"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-9-8.6C1.6 8.3 3.6 5 6.8 5c2 0 3.4 1.1 4.2 2.5h2C13.8 6.1 15.2 5 17.2 5c3.2 0 5.2 3.3 3.8 6.4C19 15.6 12 20 12 20z"/></svg>Saját lovam van</a>
+        <a href="#lovardak"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 4l9 6.5V20H3z"/><path d="M9 20v-6h6v6"/></svg>Lovardát vezetek</a>
+      </nav>
+      <div class="dl" id="letoltes">
+        <a class="dl-btn" href="https://apps.apple.com/hu/app/id6820250520"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg><span>Letöltés iPhone-ra</span></a>
+        <a class="dl-btn" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg><span>Letöltés Androidra</span></a>
+      </div>
+      <p class="pp"><span>1 lóra ingyenes, reklám nélkül.</span> <a href="adatvedelem.html">Adatvédelmi tájékoztató</a></p>
+      <div class="qr"><img src="img/qr.png" alt="QR-kód a letöltéshez" width="88" height="88"><span>Számítógépen nézed? Olvasd be a telefonod kamerájával, és rögtön a megfelelő áruházba visz.</span></div>
+    </div>
+    <div class="stage" aria-hidden="false">
+      <div class="phone p-back"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/h2_koltseg.webp" width="720" height="1558" alt="Költségek képernyő: havi összesítő kategóriánként és a bérlő tartozása" fetchpriority="low"></div></div>
+      <div class="phone p-front"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/h1_ma.webp" width="720" height="1558" alt="A Ma képernyő: a hét teendői, késő féregtelenítés, gyógyszer, fogyó takarmány" fetchpriority="high"></div></div>
+      <div class="float" aria-hidden="true"><img src="img/ikon.png" alt=""><div><b>Csillag · Féregtelenítés</b><span class="k">5 napja késik · Elvégezve?</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Magyarul</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>1 lóra ingyenes</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Reklám nélkül</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>iPhone és Android</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>EU-s felhőmentés</li>
+      <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bérlőnek ingyenes</li>
+    </ul>
+  </div>
 </div>
 
-<p class="pplink"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a></p>
+<section class="night yard" id="lovardak" aria-labelledby="h-lovarda">
+  <svg class="rosette" style="width:720px;right:-280px;top:-220px" viewBox="-100 -100 200 200" fill="none" stroke="currentColor" stroke-width=".6" aria-hidden="true"><circle r="98"/><circle r="62"/><circle r="56"/><circle r="40" stroke-dasharray="1.5 2.5"/><circle r="26"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(0.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(7.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(15.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(22.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(30.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(37.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(45.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(52.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(60.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(67.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(75.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(82.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(90.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(97.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(105.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(112.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(120.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(127.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(135.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(142.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(150.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(157.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(165.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(172.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(180.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(187.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(195.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(202.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(210.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(217.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(225.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(232.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(240.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(247.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(255.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(262.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(270.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(277.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(285.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(292.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(300.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(307.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(315.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(322.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(330.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(337.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(345.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(352.5)"/></svg>
+  <div class="wrap">
+    <div class="yard-head rv">
+      <span class="eyebrow">Lovardáknak</span>
+      <h2 id="h-lovarda">Lovardát vezetsz?<br> Az egész istálló egy<h2 id="h-lovarda">Lovardát vezetsz? Az&nbsp;egész istálló egy képernyőn.</h2>nbsp;képernyőn.</h2>
+      <p class="lead">Minden ló teendője, a lovászok beosztása és a bérlők tartozásai egy helyen. Csak te fizetsz, a bérlőknek és a tulajdonosoknak ingyenes.</p>
+    </div>
+    <div class="yard-grid">
+      <div class="yard-shots rv" aria-hidden="false">
+        <div class="phone y-back"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/b_beoszt.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Lovászbeosztás: a hét napjai, a mai feladatok és a beosztott lovászok, egy kiosztatlan feladattal"></div></div>
+        <div class="phone y-front"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/a_istallo.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Istálló nézet: 6 teendő ma, a lovászok mai beosztása, nyitott tartozások"></div></div>
+      </div>
+      <ul class="ypain">
+        <li class="rv"><q>Ki etetett ma reggel?</q><p><b>Lovászbeosztás</b> hétre előre, egyszeri cserével. Szövegként vagy képként küldöd el – a lovászoknak nem kell az app.</p></li>
+        <li class="rv"><q>Ki tartozik még a bértartással?</q><p><b>Minden tartozás egy listában,</b> tételenként, emlékeztetővel és „Kifizette” jelöléssel.</p></li>
+        <li class="rv"><q>A tulajdonos már harmadszor hív, hogy van a lova.</q><p><b>Tulajdonosi nézet:</b> a saját telefonján látja a lovát, a hónap végén pedig összesítőt kap.</p></li>
+        <li class="rv"><q>Húsz ló, húsz különböző patkolási időpont.</q><p><b>Istálló nézet:</b> az összes ló teendője sürgősség szerint, értesítéssel.</p></li>
+      </ul>
+    </div>
+    <div class="yard-price rv">
+      <p><b class="gold">Lovarda csomag:</b> 4&nbsp;990&nbsp;Ft/hó vagy 49&nbsp;900&nbsp;Ft/év, akár 300 ló. A&nbsp;meghívottaknak ingyenes, 14&nbsp;napig ingyen kipróbálható.</p>
+      <a class="ybtn" href="lovardak.html">Minden részlet lovardáknak <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
 
-<div class="shots" aria-label="Képek az appból">
-  <img src="img/1_ma.jpg" alt="A Ma képernyő: a hét teendői" loading="lazy">
-  <img src="img/2_koltseg.jpg" alt="Elszámolás a bérlővel" loading="lazy">
-  <img src="img/4_uzenet.jpg" alt="Közös ló üzenőfallal" loading="lazy">
-</div>
+<section class="sec" id="sajat" aria-label="Mit tud a Patanapló">
+  <div class="wrap">
+    <article class="story">
+      <div class="shot rv">
+        <div class="phone"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/x_teendok.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Csillag teendői: féregtelenítés 5 napja késik, patkolás 3 nap múlva, influenzaoltás 62 nap múlva, Elvégezve gombokkal"></div></div>
+        <div class="float" aria-hidden="true"><div><b>Patkolás · 3 nap múlva</b><span class="k">hathetente · Kovács Gábor</span></div></div>
+      </div>
+      <div class="txt rv">
+        <span class="eyebrow">Teendők és emlékeztetők</span>
+        <h2>Szól, mielőtt elfelejtenéd.</h2>
+        <p class="lead">Patkolás, körmölés, oltás, féreghajtás, fogászat: kiszámoljuk a következő időpontot, és előtte értesítünk. Ha megvolt, egy koppintás: Elvégezve.</p>
+        <ul class="ticks">
+          <li><span><b>Minden egy képernyőn.</b> Késő teendő, mai gyógyszer, fogyó takarmány, lejáró biztosítás.</span></li>
+          <li><span><b>Több lónál egyszerre.</b> Ha a kovács az egész istállót végigjárta, egyszerre jelölöd.</span></li>
+          <li><span><b>Egyszeri teendők is,</b> határidővel – például takarómosás vagy új kengyelszíj.</span></li>
+        </ul>
+      </div>
+    </article>
 
-<h2>Mit tud?</h2>
-<div class="feat">
-  <div class="f"><b>Időben szól</b><span>Patkolás, oltás, féreghajtás, fogászat: értesítést kapsz, mielőtt esedékes.</span></div>
-  <div class="f"><b>Edzésnapló</b><span>Stopperrel, tervezett edzésekkel, havi tervvel: ki jön és mit csinál.</span></div>
-  <div class="f"><b>Elszámolás a bérlővel</b><span>Ki mit fizetett, ki kinek tartozik, tételenként, emlékeztetővel.</span></div>
-  <div class="f"><b>Közös ló</b><span>A bérlőd, az edződ vagy a családod a saját telefonján is látja és vezeti, üzenőfallal.</span></div>
-  <div class="f"><b>Versenyek</b><span>Eredmények szakág szerint, és megosztható kép a helyezésről a saját fotóddal.</span></div>
-  <a class="f fl" href="lovardak.html"><b>Lovardáknak</b><span>Istálló nézet az összes lóval, lovászbeosztás, havi összesítő a tulajdonosoknak.</span><em>Részletek a lovardáknak ›</em></a>
-</div>
+    <article class="story flip">
+      <div class="shot rv">
+        <div class="phone"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/h2_koltseg.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Költségek: bértartás, felszerelés, kovács, állatorvos, és hogy Anna mennyivel tartozik"></div></div>
+        <div class="float r" aria-hidden="true"><div><b>Anna tartozik neked</b><span class="k">75 500 Ft · 3 tétel</span></div></div>
+      </div>
+      <div class="txt rv">
+        <span class="eyebrow">Elszámolás a bérlővel</span>
+        <h2>Ki kinek tartozik?<br> Nem kell fejben tartanod.</h2>
+        <p class="lead">Bértartás, kovács, állatorvos: minden tételnél látszik, ki fizette és ki mennyivel tartozik. Egy gombbal emlékeztetőt küldhetsz, és jelölheted, ha kifizette.</p>
+        <ul class="ticks">
+          <li><span><b>Tételenként,</b> nem csak egy havi végösszeggel.</span></li>
+          <li><span><b>Emlékeztető a bérlőnek</b> Messengeren vagy bárhol, ahol írni szoktatok.</span></li>
+          <li><span><b>Excel-letöltés</b> a költségekről, ha a hónap végén át akarod nézni.</span></li>
+        </ul>
+        <p class="note">A magyar lótartáshoz készült: bértartás, bérlő, kovács – a mi szavainkkal.</p>
+      </div>
+    </article>
 
-<div class="price"><b>1 lóra teljesen ingyenes, reklám nélkül.</b><br><span>Több lóhoz, közös lóhoz és felhőmentéshez: Plusz csomag 999 Ft/hó vagy 7 990 Ft/év, 14 napos ingyenes próbával.</span></div>
+    <article class="story">
+      <div class="shot rv">
+        <div class="phone"><div class="screen dim"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/h4_uzenet.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Üzenőfal a közös lónál: Anna, Réka és a gazda üzenetei"></div></div>
+        <div class="float r" aria-hidden="true"><div><b>Anna · 7:40</b><span class="k">Kint voltam a lónál: megetettem, kivittem a karámba.</span></div></div>
+      </div>
+      <div class="txt rv">
+        <span class="eyebrow">Közös ló</span>
+        <h2>A bérlőd és az edződ is ugyanazt látja.</h2>
+        <p class="lead">Egy meghívókóddal a ló az ő telefonjukon is megjelenik. Együtt vezetitek a naplót, és az üzenőfalon mindenki értesítést kap.</p>
+        <ul class="ticks">
+          <li><span><b>„Kint voltam” jelzés:</b> látod, ki volt ma a lónál, és mit csinált.</span></li>
+          <li><span><b>A meghívottaknak ingyenes,</b> a csomagot a ló gazdája fizeti.</span></li>
+          <li><span><b>Mindenki a saját fiókjával,</b> a saját telefonján.</span></li>
+        </ul>
+      </div>
+    </article>
 
-<div class="quotes">
-  <blockquote>„Végre egy olyan app, amivel megkönnyíthető egy lovas élete.”<footer>Evelin</footer></blockquote>
-  <blockquote>„Emlékeztető és összefoglaló a lovunk aktuális állapotáról.”<footer>Adri</footer></blockquote>
-</div>
+    <article class="story flip">
+      <div class="shot rv">
+        <div class="phone"><div class="screen"><div class="sb" aria-hidden="true"><span>9:41</span><i><svg viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 28 12"><rect x=".6" y=".6" width="23" height="10.8" rx="3.2" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.1"/><rect x="2.4" y="2.4" width="19.4" height="7.2" rx="1.8" fill="currentColor"/><rect x="25" y="4" width="1.8" height="4" rx=".9" fill="currentColor" fill-opacity=".45"/></svg></i></div><img src="img/app/x_terv.webp" width="720" height="1558" loading="lazy" decoding="async" alt="Havi terv: a hónap napjain, hogy ki jön a lóhoz – Anna, Réka vagy te"></div></div>
+      </div>
+      <div class="txt rv">
+        <span class="eyebrow">Havi terv és edzésnapló</span>
+        <h2>Ki jön holnap?<br> Elég egy pillantás.</h2>
+        <p class="lead">A havi tervben látod, melyik nap ki megy a lóhoz és mit csinál vele. Ha valaki nem ér rá, átírja, és a többiek is látják.</p>
+        <ul class="ticks">
+          <li><span><b>Edzésnapló stopperrel,</b> tervezett edzésekkel.</span></li>
+          <li><span><b>„Ugyanaz, mint legutóbb”:</b> a szokásos edzést egy koppintással rögzíted.</span></li>
+          <li><span><b>Statisztika</b> arról, mennyit mozgott a ló.</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
 
-<div class="cta"><h2>Próbáld ki ingyen 1 lóval</h2><div class="two">
-  <a class="btn" href="https://apps.apple.com/hu/app/id6820250520"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Letöltés iPhone-ra</a>
-  <a class="btn sec" data-and href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg>Letöltés Androidra</a>
-</div></div>
+<section class="sec" aria-labelledby="h-meg">
+  <div class="wrap">
+    <div class="sec-head c rv">
+      <span class="eyebrow">És még</span>
+      <h2 id="h-meg">Minden, ami egy lóval jár.</h2>
+      <p class="lead">Füzet, cetlik és Excel-tábla helyett egyetlen app.</p>
+    </div>
+    <div class="grid feat">
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.4-9-8.6C1.6 8.3 3.6 5 6.8 5c2 0 3.4 1.1 4.2 2.5h2C13.8 6.1 15.2 5 17.2 5c3.2 0 5.2 3.3 3.8 6.4C19 15.6 12 20 12 20z"/><path d="M7 12h2.5l1.5-2.5 2 5 1.5-2.5H17"/></svg></div><h3>Egészségnapló</h3><p>Kezelések, gyógyszerek, lósúly grafikonnal, és idővonal a ló teljes történetével.</p></div>
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 13.5V10M10 2.5h4M19 6l1.5-1.5"/></svg></div><h3>Edzésnapló</h3><p>Stopperrel, tervezett edzésekkel és havi tervvel. Látod, ki jön és mit csinál.</p></div>
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7.5c0-2 1.2-3.5 5-3.5s5 1.5 5 3.5"/><path d="M5.5 8h13l-1 12.5h-11z"/><path d="M9 12.5h6"/></svg></div><h3>Takarmánykészlet</h3><p>Szól, ha fogy a széna vagy a kiegészítő, és bevásárlólistát is ír.</p></div>
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div><h3>„Helyettesnek”</h3><p>Egy gombbal küldhető leírás vagy PDF: mit kap a ló, gyógyszerek, teendők, telefonszámok.</p></div>
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><circle cx="12" cy="9" r="2.2"/><path d="M8.5 13.3L7 21l5-2.5 5 2.5-1.5-7.7"/></svg></div><h3>Versenyek</h3><p>Eredmények szakág szerint, és megosztható „díjszalag” kép a helyezésről.</p></div>
+      <div class="card rv"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2.5h8a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>Dokumentumok és fotók</h3><p>Útlevél, röntgen, számlák és a ló fotónaplója, mindig kéznél.</p></div>
+    </div>
+  </div>
+</section>
 
-<p class="muted"><a href="lovardak.html">Lovardáknak</a> · <a href="adatvedelem.html">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="https://facebook.com/patanaplo">Facebook</a> · <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a></p>
+<section class="alt voices" aria-labelledby="h-vel">
+  <div class="wrap">
+    <div class="sec-head c rv">
+      <span class="eyebrow">Akik már használják</span>
+      <h2 id="h-vel" class="sr">Vélemények</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote rv"><blockquote><p>„Végre egy olyan app, amivel megkönnyíthető egy lovas élete.”</p></blockquote><footer>Evelin</footer></figure>
+      <figure class="quote rv"><blockquote><p>„Emlékeztető és összefoglaló a lovunk aktuális állapotáról.”</p></blockquote><footer>Adri</footer></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="csomagok" aria-labelledby="h-csomag">
+  <div class="wrap">
+    <div class="sec-head c rv">
+      <span class="eyebrow">Csomagok</span>
+      <h2 id="h-csomag">Egy lóra ingyenes. Utána is egyszerű.</h2>
+      <p class="lead">Minden fizetős csomag 14 napig ingyen kipróbálható, és az áruházban bármikor lemondható.</p>
+    </div>
+    <div class="prices">
+      <div class="card price rv">
+        <h3>Ingyenes</h3>
+        <p class="who">Egy lóhoz</p>
+        <p class="amt">0 Ft</p>
+        <p class="yr">reklám nélkül</p>
+        <ul><li>1 ló</li><li>Teendők és emlékeztetők</li><li>Edzés- és egészségnapló</li><li>Költségek és elszámolás</li></ul>
+      </div>
+      <div class="card price hl rv">
+        <h3>Plusz</h3>
+        <p class="who">Legfeljebb 3 lóhoz, bérlővel</p>
+        <p class="amt">999 Ft<small>/hó</small></p>
+        <p class="yr">vagy 7 990 Ft/év</p>
+        <ul><li>3 ló</li><li>Felhőmentés</li><li>Közös ló a bérlővel, edzővel, családdal</li><li>Dokumentumok és fotók</li><li>Statisztika és havi összesítő</li></ul>
+      </div>
+      <div class="card price rv">
+        <h3>Pro</h3>
+        <p class="who">Legfeljebb 10 lóhoz, edzőknek, családoknak</p>
+        <p class="amt">1 990 Ft<small>/hó</small></p>
+        <p class="yr">vagy 14 990 Ft/év</p>
+        <ul><li>10 ló</li><li>Minden, ami a Pluszban: felhőmentés, közös ló, dokumentumok, statisztika</li></ul>
+      </div>
+      <div class="card price dark rv">
+        <h3 class="gold">Lovarda</h3>
+        <p class="who">Istállóknak, akár 300 lóval</p>
+        <p class="amt">4 990 Ft<small>/hó</small></p>
+        <p class="yr">vagy 49 900 Ft/év</p>
+        <ul><li>Istálló nézet</li><li>Lovászbeosztás</li><li>Tulajdonosi nézet</li><li>Havi összesítő több lóra</li></ul>
+        <a class="more" href="lovardak.html">Részletek a lovardáknak →</a>
+      </div>
+    </div>
+    <div class="pnotes rv">
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>14 nap ingyenes próba</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Bármikor lemondható az áruházban</span>
+      <span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A meghívottaknak ingyenes</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" aria-labelledby="h-gyik">
+  <div class="wrap">
+    <div class="sec-head c rv">
+      <span class="eyebrow">Kérdések</span>
+      <h2 id="h-gyik">Amit gyakran kérdeznek</h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>Tényleg ingyenes egy lóra?</summary><p>Igen. Egy lóhoz az app ingyenes, és reklám sincs benne. Több lóhoz, felhőmentéshez és közös lóhoz kell a Plusz csomag.</p></details>
+      <details><summary>A bérlőmnek is fizetnie kell?</summary><p>Nem. Akit meghívsz a lovadhoz – bérlő, edző, családtag vagy tulajdonos –, annak ingyenes. A csomagot a ló gazdája fizeti.</p></details>
+      <details><summary>Hogyan működik a 14 napos próba?</summary><p>Minden fizetős csomag 14 napig ingyen kipróbálható. Az előfizetést az App Store-ban vagy a Google Playen bármikor lemondhatod.</p></details>
+      <details><summary>Hol vannak az adataim?</summary><p>A telefonodon, felhőmentéssel pedig az EU-ban, a Firebase szolgáltatásában. Részletek az <a href="adatvedelem.html">adatvédelmi tájékoztatóban</a>.</p></details>
+      <details><summary>Milyen telefonon működik?</summary><p>iPhone-on és Androidon is, magyarul.</p></details>
+      <details><summary>Lovardát vezetek. Nekem is jó?</summary><p>Igen, erre való a Lovarda csomag: istálló nézet az összes lóval, lovászbeosztás, tulajdonosi nézet és havi összesítő. <a href="lovardak.html">Részletek a lovardáknak</a>.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="night cta" aria-labelledby="h-cta">
+  <svg class="rosette" style="width:900px;left:50%;top:50%;transform:translate(-50%,-50%)" viewBox="-100 -100 200 200" fill="none" stroke="currentColor" stroke-width=".6" aria-hidden="true"><circle r="98"/><circle r="62"/><circle r="56"/><circle r="40" stroke-dasharray="1.5 2.5"/><circle r="26"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(0.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(7.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(15.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(22.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(30.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(37.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(45.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(52.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(60.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(67.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(75.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(82.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(90.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(97.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(105.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(112.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(120.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(127.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(135.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(142.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(150.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(157.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(165.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(172.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(180.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(187.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(195.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(202.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(210.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(217.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(225.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(232.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(240.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(247.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(255.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(262.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(270.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(277.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(285.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(292.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(300.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(307.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(315.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(322.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(330.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(337.5)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(345.0)"/><line x1="0" y1="-62" x2="0" y2="-97" transform="rotate(352.5)"/></svg>
+  <div class="wrap">
+    <img class="icon" src="img/ikon.png" alt="" width="76" height="76" loading="lazy">
+    <h2 id="h-cta">Kezdd el ma – egy lóra ingyenes.</h2>
+    <p class="lead">Vedd fel a lovad, és a következő patkolás már nem ér meglepetésként.</p>
+    <div class="dl">
+      <a class="dl-btn" href="https://apps.apple.com/hu/app/id6820250520"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg><span>Letöltés iPhone-ra</span></a>
+      <a class="dl-btn" data-and href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg><span>Letöltés Androidra</span></a>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="img/ikon.png" alt="" width="34" height="34" loading="lazy">Patanapló</a>
+    <nav aria-label="Lábléc">
+      <a href="lovardak.html">Lovardáknak</a>
+      <a href="adatvedelem.html">Adatvédelmi tájékoztató</a>
+      <a href="aszf.html">Felhasználási feltételek</a>
+      <a href="https://facebook.com/patanaplo">Facebook</a>
+      <a href="mailto:kapcsolat.elteto@gmail.com">kapcsolat.elteto@gmail.com</a>
+    </nav>
+    <small>Magyar lovas napló iPhone-ra és Androidra. Az oldal nem használ sütit és követőkódot.</small>
+  </div>
+</footer>
+
 <script>
 /* A főoldal NEM ugrik magától az áruházba (az app régi adatvédelmi linkje és az App Store adatvédelmi címe is ide mutat,
    ezért az adatvédelmi link mindig elérhető maradjon). Az automatikus továbbítás csak a letoltes.html-en van. Nincs követés, nincs süti.
@@ -114,6 +307,13 @@
   var m=/[?&]r=([a-z0-9_-]{1,20})/i.exec(location.search),r=m?m[1].toLowerCase():"";
   var ref=r?"utm_source%3D"+r+"%26utm_medium%3Dajanlas%26utm_campaign%3Dletoltes":"utm_source%3Dfooldal%26utm_medium%3Dweboldal%26utm_campaign%3Dletoltes";
   document.querySelectorAll("#and,[data-and]").forEach(function(a){a.href=a.href.split("&")[0]+"&referrer="+ref});
+})();
+/* finom beúszás görgetéskor (csökkentett mozgásnál nincs) */
+(function(){
+  var els=document.querySelectorAll(".rv");
+  if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in")});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{rootMargin:"0px 0px -8% 0px"});
+  els.forEach(function(e){io.observe(e)});
 })();
 </script>
 </body>
