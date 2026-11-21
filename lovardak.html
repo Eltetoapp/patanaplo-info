@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patanapló lovardáknak – az egész istálló egy helyen</title>
+<meta name="description" content="Lovardáknak: az összes ló teendői, lovászbeosztás, elszámolás a bérlőkkel, havi összesítő a tulajdonosoknak. Magyarul, iPhone-ra és Androidra. 14 napig ingyen kipróbálható.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Patanapló">
+<meta property="og:title" content="Patanapló lovardáknak – az egész istálló egy helyen">
+<meta property="og:description" content="Az összes ló teendői, lovászbeosztás, elszámolás a bérlőkkel, havi összesítő a tulajdonosoknak. 14 napig ingyen.">
+<meta property="og:url" content="https://patanaplo.hu/lovardak.html">
+<meta property="og:image" content="https://patanaplo.hu/img/elonezet.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/ikon.png">
+<link rel="apple-touch-icon" href="img/ikon.png">
+<style>
+  :root{--bg:#f6f1e8;--fg:#1d2733;--muted:#5f6b78;--navy:#162d47;--navy2:#21405f;--gold:#d9a441;--card:#fff;--btn:#a8562a;--line:#e6dfd2}
+  @media (prefers-color-scheme:dark){:root{--bg:#12171d;--fg:#e8edf2;--muted:#9aa7b4;--card:#1a2129;--line:#2c3743}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:linear-gradient(135deg,var(--navy2),#0f2133);color:#fff;padding:36px 16px 40px;border-top:6px solid var(--gold);text-align:center}
+  .brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:24px}
+  .brand img{width:52px;height:52px;border-radius:13px}
+  h1{margin:18px auto 10px;font-size:clamp(30px,6vw,46px);line-height:1.1;max-width:720px;letter-spacing:-.01em}
+  header p{margin:0 auto;color:#c9d6e3;max-width:560px}
+  .free{display:inline-block;margin-top:16px;background:var(--gold);color:#1d2733;font-weight:800;padding:6px 16px;border-radius:99px;font-size:15px}
+  main{max-width:960px;margin:0 auto;padding:0 16px 48px}
+  .dl{background:var(--card);border-radius:20px;padding:20px;margin:-22px auto 26px;max-width:620px;box-shadow:0 10px 30px rgba(15,33,51,.12);display:grid;gap:10px}
+  a.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;font-weight:800;color:#fff;background:var(--btn);border-radius:14px;padding:15px 12px;font-size:18px}
+  a.btn.sec{background:var(--navy)}
+  a.btn svg{flex:0 0 auto}
+  .qr{display:none;align-items:center;gap:16px;border-top:1px solid var(--line);padding-top:14px;margin-top:4px}
+  .qr img{width:112px;height:112px;border-radius:8px;background:#fff;padding:4px}
+  .qr span{color:var(--muted);font-size:15px}
+  @media (hover:hover) and (min-width:720px){.qr{display:flex}}
+  .shots{display:flex;gap:14px;margin:8px 0 30px;overflow-x:auto;padding:4px 0 10px;scroll-snap-type:x mandatory}
+  .shots img:first-child{margin-left:auto}.shots img:last-child{margin-right:auto}
+  .shots img{width:min(250px,62vw);height:auto;border-radius:18px;box-shadow:0 10px 26px rgba(15,33,51,.18);scroll-snap-align:center;flex:0 0 auto}
+  h2{text-align:center;font-size:26px;margin:10px 0 16px}
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  .f{background:var(--card);border-radius:16px;padding:16px 18px;border:1px solid var(--line)}
+  .f b{display:block;font-size:17px;margin-bottom:2px}
+  .f span{color:var(--muted);font-size:15px}
+  .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:26px 0}
+  blockquote{margin:0;background:var(--card);border-radius:16px;padding:16px 18px;border-left:5px solid var(--gold);font-style:italic}
+  blockquote footer{font-style:normal;color:var(--muted);font-size:14px;margin-top:6px}
+  .muted{color:var(--muted);font-size:14px;text-align:center;margin-top:28px}
+  .muted a{color:inherit}
+  .pplink{font-size:15px;margin:14px 0 0}.pplink a{color:#fff;text-decoration:underline}
+  .price{background:var(--card);border-radius:20px;padding:22px;max-width:620px;margin:26px auto;border:2px solid var(--gold);text-align:center}
+  .price .big{font-size:30px;font-weight:800;margin:4px 0}
+  .price p{margin:6px 0;color:var(--muted);font-size:15px}
+  ol.steps{max-width:620px;margin:0 auto;padding-left:22px}ol.steps li{margin:8px 0}
+  .help{background:var(--navy);color:#fff;border-radius:20px;padding:22px;max-width:620px;margin:30px auto 0;text-align:center}
+  .help a{color:#fff;font-weight:800}
+  .back{font-size:15px;margin:14px 0 0}.back a{color:#fff;text-decoration:underline}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><img src="img/ikon.png" alt="">Patanapló lovardáknak</div>
+  <h1>Az egész istálló egy helyen</h1>
+  <p>Minden ló teendői, lovászbeosztás, elszámolás a bérlőkkel és havi összesítő a tulajdonosoknak. Magyarul, a telefonodon.</p>
+  <span class="free">14 napig ingyen kipróbálható</span>
+  <p class="back"><a href="./">A Patanapló főoldala</a></p>
+</header>
+<main>
+<div class="dl" id="letoltes">
+  <a class="btn"  href="https://apps.apple.com/hu/app/id6820250520"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9-.7 0-1.8-.9-3-.8-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.8-2.3.9-1.3 1.3-2.5 1.3-2.6 0 0-2.5-1-2.5-3.7zM14.1 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z"/></svg>Letöltés iPhone-ra</a>
+  <a class="btn sec" id="and" href="https://play.google.com/store/apps/details?id=hu.patanaplo.app"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 2.6v18.8c0 .4.4.6.7.4L21 12.4c.3-.2.3-.6 0-.8L4.7 2.2c-.3-.2-.7 0-.7.4z"/></svg>Letöltés Androidra</a>
+  <div class="qr"><img src="img/qr.png" alt="QR-kód a letöltéshez"><span>Számítógépen nézed? Olvasd be a telefonod kamerájával, és rögtön a megfelelő áruházba visz.</span></div>
+</div>
+
+
+<div class="shots" aria-label="Képek az appból">
+  <img src="img/lovarda/a_istallo.jpg" alt="Istálló nézet: az összes ló mai teendője" loading="lazy">
+  <img src="img/lovarda/b_beoszt.jpg" alt="Lovászbeosztás" loading="lazy">
+  <img src="img/lovarda/c_tartozas.jpg" alt="Nyitott tartozások az összes lóra" loading="lazy">
+  <img src="img/lovarda/d_havi.jpg" alt="Havi összesítő több lóra" loading="lazy">
+</div>
+
+<h2>Mit kap a lovarda?</h2>
+<div class="feat">
+  <div class="f"><b>Istálló nézet</b><span>Az összes ló mai és közelgő teendője egy képernyőn, sürgősség szerint: patkolás, oltás, féreghajtás, gyógyszer.</span></div>
+  <div class="f"><b>Lovászbeosztás</b><span>Heti beosztás, egyszeri cserével. Szövegként vagy képként küldöd el, a lovászoknak nem kell az app.</span></div>
+  <div class="f"><b>Tulajdonosok és bérlők</b><span>Meghívókóddal a saját telefonjukon látják a lovukat. A tulajdonos csak megtekinti, a bérlő vezeti is. Nekik ingyenes.</span></div>
+  <div class="f"><b>Elszámolás tételenként</b><span>Bértartás, kovács, állatorvos: ki kinek tartozik, emlékeztető egy koppintással, és jelölheted, ha kifizette.</span></div>
+  <div class="f"><b>Havi összesítő</b><span>PDF a hónapról több lóra egyszerre: mozgás, ellátás, egészség, költségek. Mehet a tulajdonosnak e-mailben vagy Messengeren.</span></div>
+  <div class="f"><b>Közös takarmány</b><span>Az istálló közös készlete, szól, ha fogy, és bevásárlólista. A közös kiadások külön látszanak.</span></div>
+  <div class="f"><b>Üzenőfal lovanként</b><span>„Sántít, ne vidd ki.” Az üzenet a ló csapatához megy, értesítéssel.</span></div>
+  <div class="f"><b>Leírás helyettesnek</b><span>Egy gombbal küldhető lap: mit kap a ló, gyógyszerek, teendők, telefonszámok.</span></div>
+</div>
+
+<div class="price">
+  <b>Lovarda csomag</b>
+  <div class="big">4 990 Ft/hó</div>
+  <p>vagy 49 900 Ft/év · akár 300 ló</p>
+  <p>14 napig ingyen kipróbálhatod, és bármikor lemondhatod az áruházban. A meghívott bérlőknek és tulajdonosoknak nem kell előfizetniük.</p>
+</div>
+
+<h2>Így kezdheted el</h2>
+<ol class="steps">
+  <li>Töltsd le az appot, és vedd fel a lovakat (név, fotó, a következő patkolás, oltás).</li>
+  <li>A Beállítások → Csomagom résznél válaszd a Lovarda csomagot: az első 14 nap ingyenes.</li>
+  <li>Írd be a lovászokat és a feladatokat, és hívd meg a bérlőket és a tulajdonosokat a lovukhoz.</li>
+</ol>
+
+<div class="help">
+  Segítünk a beállításban, akár az első lovak felvételében is.<br>
+  Írj nekünk: <a href="mailto:kapcsolat.elteto@gmail.com?subject=Patanapl%C3%B3%20lovard%C3%A1knak">kapcsolat.elteto@gmail.com</a>
+</div>
+
+<p class="muted"><a href="./">Főoldal</a> · <a href="adatvedelem.html">Adatvédelmi tájékoztató</a> · <a href="aszf.html">Felhasználási feltételek</a> · <a href="https://facebook.com/patanaplo">Facebook</a></p>
+</main>
+<script>
+/* A Play-linkbe címke kerül (honnan jöttek): ?r=… vagy alapból „lovardak”. Nincs követés, nincs süti, nincs automatikus továbbítás. */
+(function(){
+  var m=/[?&]r=([a-z0-9_-]{1,20})/i.exec(location.search),r=m?m[1].toLowerCase():"lovardak";
+  var and=document.getElementById("and");and.href=and.href.split("&")[0]+"&referrer=utm_source%3D"+r+"%26utm_medium%3Dlovardak%26utm_campaign%3Dletoltes"})();
+</script>
+</body>
+</html>
